@@ -37,17 +37,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-let tabLock = false;
-const tabTransitionDuration = 120; 
 document.querySelectorAll('.tab-link').forEach(btn => {
     btn.addEventListener('click', function() {
-        if (tabLock) return;
-        tabLock = true;
+        const tabId = this.dataset.tab;
         document.querySelectorAll('.tab-link').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
         this.classList.add('active');
-        document.getElementById(this.dataset.tab).classList.add('active');
-        setTimeout(() => { tabLock = false; }, tabTransitionDuration);
+        document.querySelectorAll('.tab-content').forEach(tc => {
+            if (tc.id === tabId) {
+                tc.classList.add('active');
+            } else {
+                tc.classList.remove('active');
+            }
+        });
     });
 });
 document.querySelectorAll('.navbar a').forEach(anchor => {
