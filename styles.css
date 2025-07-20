@@ -339,6 +339,14 @@ a:hover, .cta-button:hover {
     margin-top: 0.2rem;
     text-shadow: 0 2px 8px rgba(0,0,0,0.13);
 }
+.menu-section-subtitle {
+    color: #ffb366;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
